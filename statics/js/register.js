@@ -71,7 +71,7 @@ function handleRegistration(event) {
 
   // Redirect to login page (index.html) after 2 seconds
   setTimeout(() => {
-    window.location.href = "/index.html"
+    window.location.href = "../../index.html"
   }, 2000)
 }
 
