@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual ATM - Transaction History</title>
+    <link rel="stylesheet" href="/statics/css/T.history.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="history-container">
+        <div class="header-section">
+            <div class="back-button">
+                <a href="/pages/dashboard.html" class="back-link">← Back to Dashboard</a>
+            </div>
+            <div class="page-header">
+                <h1 class="page-heading">📊 Transaction History</h1>
+                <p class="page-subtitle">View all your account transactions</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="card-icon">💰</div>
+                    <div class="card-content">
+                        <h3 id="total-deposits">₹0</h3>
+                        <p>Total Deposits</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">💸</div>
+                    <div class="card-content">
+                        <h3 id="total-withdrawals">₹0</h3>
+                        <p>Total Withdrawals</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="card-icon">📈</div>
+                    <div class="card-content">
+                        <h3 id="transaction-count">0</h3>
+                        <p>Total Transactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filters-section">
+                <div class="filters-header">
+                    <h2>Filter Transactions</h2>
+                </div>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="transaction-type">Transaction Type:</label>
+                        <select id="transaction-type" onchange="filterTransactions()">
+                            <option value="all">All Transactions</option>
+                            <option value="deposit">💰 Deposits Only</option>
+                            <option value="withdrawal">💸 Withdrawals Only</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-filter">Date Range:</label>
+                        <select id="date-filter" onchange="filterTransactions()">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transactions-section">
+                <div class="transactions-header">
+                    <h2>Transaction Details</h2>
+                    <div class="sort-options">
+                        <button class="sort-btn active" onclick="sortTransactions('newest')">Newest First</button>
+                        <button class="sort-btn" onclick="sortTransactions('oldest')">Oldest First</button>
+                    </div>
+                </div>
+                
+                <div class="transaction-list" id="transaction-list">
+                    <div class="no-transactions">
+                        <div class="no-transactions-icon">📝</div>
+                        <h3>No Transactions Found</h3>
+                        <p>You haven't made any transactions yet.</p>
+                        <a href="/pages/dashboard.html" class="start-transaction-btn">Start Banking →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/statics/js/T.history.js"></script>
+</body>
+</html>
